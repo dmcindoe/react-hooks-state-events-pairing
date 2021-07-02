@@ -1,5 +1,11 @@
 import video from "../data/video.js";
 
+import Header from "./Header"
+import LikeButton from "./LikeButton"
+import DislikeButton from "./DislikeButton"
+import Toggle from "./HideComments"
+import CommentsList from "./CommentsList";
+
 function App() {
   console.log("Here's your data:", video);
 
@@ -12,8 +18,23 @@ function App() {
         frameborder="0"
         allowfullscreen
         title="Thinking in React"
+      />   
+      <Header 
+      title={video.title}
+      views={video.views}
+      createdAt={video.createdAt}
+      /> 
+      <LikeButton 
+      upvotes={video.upvotes}
+      /> 
+      <DislikeButton 
+      downvotes={video.downvotes}
       />
+      <div>
+      <Toggle />
+      </div>
     </div>
+    
   );
 }
 
